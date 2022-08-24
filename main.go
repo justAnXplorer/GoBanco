@@ -33,7 +33,3 @@ type contaCorrente struct{
 	numeroConta int
 	saldo float32
 }
-
-type dado struct{
-	lados int
-}
