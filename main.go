@@ -17,14 +17,8 @@ func main() {
 		156548.7,
 	}
 
-	contaDoAbreu := contaCorrente{
-		"Abreu",
-		201,
-		202181,
-		15654.7,
-	}
 	fmt.Println(contaDoLeozao,"\n", contaDoAbel)
-	fmt.Println(contaDoAbreu)
+	
 }
 
 type contaCorrente struct{
