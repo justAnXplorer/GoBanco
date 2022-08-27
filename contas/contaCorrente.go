@@ -34,7 +34,7 @@ func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *C
 
 	if valorDaTransferencia < float64(c.Saldo) && valorDaTransferencia > 0 {
 		c.Saldo = c.Saldo - float32(valorDaTransferencia)
-		contaDestino.depositar(valorDaTransferencia)
+		contaDestino.Depositar(valorDaTransferencia)
 		fmt.Println("Tranferência realizada com sucesso. Seu Saldo é de: R$", c.Saldo)
 		return true
 	} else {
