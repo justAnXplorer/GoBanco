@@ -1,7 +1,8 @@
 package main
 
-import ( "fmt"
-		 "G:\Meu Drive\2022\GO\GoBanco\contas"
+import ( 
+		"fmt"
+		"GoBanco/contas"
 )
 func main() {
 
@@ -13,8 +14,8 @@ func main() {
 	}
 
 	contaDaSilvia := contas.contaCorrente{
-		titular: "Silvia",
-		saldo: 300,
+		Titular: "Silvia",
+		Saldo: 300,
 	}
 
 	status := contaDoAbel.transferir(-100, &contaDaSilvia)

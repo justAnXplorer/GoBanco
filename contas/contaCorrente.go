@@ -2,22 +2,22 @@ package contas
 
 import "fmt"
 
-type contaCorrente struct{
-	Titular string
+type contaCorrente struct {
+	Titular       string
 	NumeroAgencia int
-	NumeroConta int
-	Saldo float32
+	NumeroConta   int
+	Saldo         float32
 }
 
 func (c *contaCorrente) sacar(valorDoSaque float64) {
 
 	podeSacar := valorDoSaque <= float64(c.Saldo) && valorDoSaque > 0
-		if podeSacar == true {
-			c.Saldo = c.Saldo - float32(valorDoSaque)
-			fmt.Println("Saque realizado com sucesso. Seu Saldo é de: R$", c.Saldo)
-		} else {
-			fmt.Println("Saque inválido. Seu Saldo é de: R$", c.Saldo) 
-		}
+	if podeSacar == true {
+		c.Saldo = c.Saldo - float32(valorDoSaque)
+		fmt.Println("Saque realizado com sucesso. Seu Saldo é de: R$", c.Saldo)
+	} else {
+		fmt.Println("Saque inválido. Seu Saldo é de: R$", c.Saldo)
+	}
 }
 
 func (c *contaCorrente) depositar(valorDoDeposito float64) {
@@ -26,7 +26,7 @@ func (c *contaCorrente) depositar(valorDoDeposito float64) {
 		c.Saldo = c.Saldo + float32(valorDoDeposito)
 		fmt.Println("Depósito efetuado com sucesso. Seu Saldo é de: R$", c.Saldo)
 	} else {
-		fmt.Println("Depósito inválido. Seu Saldo é de: R$", c.Saldo )
+		fmt.Println("Depósito inválido. Seu Saldo é de: R$", c.Saldo)
 	}
 }
 
