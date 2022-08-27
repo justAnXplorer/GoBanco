@@ -2,14 +2,14 @@ package contas
 
 import "fmt"
 
-type contaCorrente struct {
+type ContaCorrente struct {
 	Titular       string
 	NumeroAgencia int
 	NumeroConta   int
 	Saldo         float32
 }
 
-func (c *contaCorrente) sacar(valorDoSaque float64) {
+func (c *ContaCorrente) sacar(valorDoSaque float64) {
 
 	podeSacar := valorDoSaque <= float64(c.Saldo) && valorDoSaque > 0
 	if podeSacar == true {
@@ -20,7 +20,7 @@ func (c *contaCorrente) sacar(valorDoSaque float64) {
 	}
 }
 
-func (c *contaCorrente) depositar(valorDoDeposito float64) {
+func (c *ContaCorrente) Depositar(valorDoDeposito float64) {
 
 	if valorDoDeposito > 0 {
 		c.Saldo = c.Saldo + float32(valorDoDeposito)
@@ -30,7 +30,7 @@ func (c *contaCorrente) depositar(valorDoDeposito float64) {
 	}
 }
 
-func (c *contaCorrente) transferir(valorDaTransferencia float64, contaDestino *contaCorrente) bool {
+func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *ContaCorrente) bool {
 
 	if valorDaTransferencia < float64(c.Saldo) && valorDaTransferencia > 0 {
 		c.Saldo = c.Saldo - float32(valorDaTransferencia)
